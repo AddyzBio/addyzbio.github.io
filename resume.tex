@@ -108,19 +108,24 @@
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Microservices, Framework \& Platform Engineering}{Mar. 2022 - Present}
-      {Nagarro}{Java 17, Spring Boot 3, Spring 6, Quarkus 3, Event-driven}
+      {Platform Engineering}{Mar. 2022 - Present}
+      {Nagarro}{Java 21, Gradle, Docker, Event-driven, AWS}
       \resumeItemListStart
-        \resumeItem{Library modules}
-          {Implemented starters for observability, security, databases, Kafka and AVRO ensuring comprehensive system functionality \& increased development efficiency. Notification service utilizing Kafka connectors.}
+        \resumeItem{Microservices \& Framework}
+          {Implemented observability, security, database \& Kafka starter libraries ensuring comprehensive system functionality \& increased development efficiency.
+          Notification service utilizing Kafka connectors.}
         \resumeItem{Build Plugins}
-          {Developed Gradle plugins for OAS and AsyncAPI specifications, facilitating code generation and scaffolding with Projen. Used by around \underline{100 microservices} for rapid development.}
-        \resumeItem{Cross-cutting concerns}
-          {Created, managed \& improved Docker base images with \underline{58\% size reduction} \& \underline{43\% reduction in security vulnerabilities}\opst{ using distroless and updated spring boot framework and java versions}. Migrated from Spring Boot to Quarkus with performance test metrics showing \underline{over 150\% throughput improvement\opst{ from (tuned SB) 120 RPS to (untuned Q) 300 RPS with 500m CPU and 512MiB Memory (Q needs 1/10 of SB) by K6}} \& \underline{86\% reduced Docker image size \opst{ ~35MB v/s ~250MB}}.}
+          {Developed plugins for OpenAPI and AsyncAPI/AVRO specifications, facilitating code generation and scaffolding with Projen. Used by around \underline{100 microservices} for rapid API-first development.}
+        \resumeItem{Cross-cutting DevOps concerns}
+          {Created, managed \& improved Docker base images with \underline{58\% size reduction} \& \underline{43\% reduction in security vulnerabilities}\opst{ using distroless and updated spring boot framework and java versions}. Used capabilities like multi-stage and multi-arch for increased efficiency.}
         \resumeItem{Security Protocols}
-          {Strengthened security protocols with pre-merge checks in GitHub Actions and established a robust tagging and versioning flow. Achieved \underline{80\% \& 33\% run time reduction} respectively in checkstyle\opst{ by skipping compilation} \& other checks\opst{ by checking git-diff, using setup-gradle action and github actions cache and gradle tasks management by declaring task dependencies and inputs/outputs}.}
+          {Strengthened security with GitHub Actions checks and established a robust tagging and versioning flow. Achieved \underline{80\% \& 33\% run time reduction} respectively in checkstyle\opst{ by skipping compilation} \& other checks\opst{ by checking git-diff, using setup-gradle action and github actions cache and gradle tasks management by declaring task dependencies and inputs/outputs}.}
+        \resumeItem{Cost-cutting \& performance}
+          {Migrated from Spring Boot 3 to Quarkus 3 (native) with perf test metrics showing \underline{over 150\% throughput improvement\opst{from (tuned SB) 120 RPS to (untuned Q) 300 RPS with 500m CPU and 512MiB Memory (Q needs 1/10 of SB) by K6}} or 50\% reduced resource consumption \& \underline{86\% reduced Docker image size\opst{ ~35MB v/s ~250MB}}.}
+        \resumeItem{Cloud Automation \& SRE}
+          {Infrastructure provisioning with \textbf{AWS CDK} constructs in TypeScript \& CI/CD pipelines in \textbf{Bash script}; service deployment with \textbf{Helm Charts \& ChartMuseum}; system health monitoring, fault alerting and troubleshooting with tools like \textbf{Splunk, Grafana, Tempo \& Prometheus}.}
         \resumeItem{Highlights}
-          {DevOps, SRE, CI/CD, cross-functional, smart, modular, secure, scalable \& well-documented.}
+          {Cross-functional, smart, modular, scalable \& well-documented.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -128,7 +133,7 @@
       {Verifone India Pvt. Ltd.}{Java 11, Spring Boot 2, Tomcat, Maven}
       \resumeItemListStart
         \resumeItem{Workflow Definition}
-          {Created a fully flexible structure to define micro-services workflow using Spring Beans, Spring Async, and Spring Retry to handle exceptions and send custom responses.}
+          {Created a fully flexible structure to define microservices workflow using Spring Beans, Spring Async, and Spring Retry to handle exceptions and send custom responses.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -159,8 +164,8 @@
       {Nagarro - Digital Product Engineering Platform}{Remote}
       {Associate Staff Engineer}{July 2021 - Present}
       \resumeItemListStart
-        \resumeItem{Microservice Architecture Transition}
-          {Assisted in the transition from\opst{ Hybris} monolith to API-first microservice architecture, enhancing scalability and performance.}
+        \resumeItem{Migration}
+          {Assisted in the transition from\opst{ Hybris} monolith to microservice architecture enhancing scalability.}
         \resumeItem{E-commerce and CRM Development}
           {Designed and developed a revamped e-commerce platform and CRM gateway, improving user experience and system efficiency.}
       \resumeItemListEnd
@@ -198,13 +203,13 @@
 \section{Skills}
   \resumeSubHeadingListStart
     \resumeItem{Languages}
-      {Java, Shell (Bash), JavaScript/TypeScript, SQL}
+      {Java, Shell (Bash), JavaScript/TypeScript, Python, SQL}
     \resumeItem{Frameworks/Libraries}
-      {Spring Boot, AOP, JUnit, Mockito, MapStruct, Jackson, Gson, NodeJS, ReactJS}
-    \resumeItem{Tools}
-      {Git, Maven, Kubernetes, ArgoCD, Grafana, Tempo, Prisma Cloud Compute, SonarQube}
-    \resumeItem{Platforms}
-      {REST, AWS, CDK, Helm, ChartMuseum, Istio Service Mesh}
+      {Spring Boot, AOP, Quarkus native, JUnit, Mockito, MapStruct, Jackson, Gson, NodeJS, ReactJS}
+    \resumeItem{Tools/Platforms}
+      {Git, Kubernetes, ArgoCD, Prisma Cloud Compute, SonarQube, REST, Istio Service Mesh, Terraform}
+    \resumeItem{Hobby projects}
+      {IoT, Home Automation, AI/ML with LLM, Ollama, Gradio, ComfyUI, n8n}
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
