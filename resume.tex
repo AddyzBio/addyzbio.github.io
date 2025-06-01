@@ -1,0 +1,225 @@
+%------------------------
+% Resume Template
+% Author : Anubhav Singh
+% Github : https://github.com/xprilion
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,20pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{soul}
+\setlength{\multicolsep}{-3.0pt}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheadingSingle}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% control printing parts of text e.g. improvement reason to explain in interview etc.
+\newif\ifprintstuff
+\printstufffalse
+% \printstufftrue
+
+% makes strikethrough from soul lib optional with wrapper custom command
+\providecommand{\opst}[1]{\ifprintstuff\st{#1}\else\fi}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Aditya Thakur} & \href{mailto:engg.aditya.thakur@gmail.com}{engg.aditya.thakur@gmail.com}\\
+  Software Engineer with over 6 YOE & +91-0123456789 \\
+\end{tabular*}
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Microservices, Framework \& Platform Engineering}{Mar. 2022 - Present}
+      {Nagarro}{Java 17, Spring Boot 3, Spring 6, Quarkus 3, Event-driven}
+      \resumeItemListStart
+        \resumeItem{Library modules}
+          {Implemented starters for observability, security, databases, Kafka and AVRO ensuring comprehensive system functionality \& increased development efficiency. Notification service utilizing Kafka connectors.}
+        \resumeItem{Build Plugins}
+          {Developed Gradle plugins for OAS and AsyncAPI specifications, facilitating code generation and scaffolding with Projen. Used by around \underline{100 microservices} for rapid development.}
+        \resumeItem{Cross-cutting concerns}
+          {Created, managed \& improved Docker base images with \underline{58\% size reduction} \& \underline{43\% reduction in security vulnerabilities}\opst{ using distroless and updated spring boot framework and java versions}. Migrated from Spring Boot to Quarkus with performance test metrics showing \underline{over 150\% throughput improvement\opst{ from (tuned SB) 120 RPS to (untuned Q) 300 RPS with 500m CPU and 512MiB Memory (Q needs 1/10 of SB) by K6}} \& \underline{86\% reduced Docker image size \opst{ ~35MB v/s ~250MB}}.}
+        \resumeItem{Security Protocols}
+          {Strengthened security protocols with pre-merge checks in GitHub Actions and established a robust tagging and versioning flow. Achieved \underline{80\% \& 33\% run time reduction} respectively in checkstyle\opst{ by skipping compilation} \& other checks\opst{ by checking git-diff, using setup-gradle action and github actions cache and gradle tasks management by declaring task dependencies and inputs/outputs}.}
+        \resumeItem{Highlights}
+          {DevOps, SRE, CI/CD, cross-functional, smart, modular, secure, scalable \& well-documented.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Microservices Orchestrator}{Oct. 2019 - June 2021}
+      {Verifone India Pvt. Ltd.}{Java 11, Spring Boot 2, Tomcat, Maven}
+      \resumeItemListStart
+        \resumeItem{Workflow Definition}
+          {Created a fully flexible structure to define micro-services workflow using Spring Beans, Spring Async, and Spring Retry to handle exceptions and send custom responses.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Terminal/POS Payment \& FOREX Rate Processors}{Mar. 2019 - Sept. 2019, Jan. 2021 - June 2021}
+      {Verifone India Pvt. Ltd.}{Java 8, OOP principles, SOLID design}
+      \resumeItemListStart
+        \resumeItem{JSON \& HEX}
+          {Translated JSON from payment devices into Acquirer-specific HEX requests \& response back to JSON.}
+        \resumeItem{FOREX Integration}
+          {Communicated with FOREX provider over HTTP using REST \& JSON.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Customer Resource Management(CRM) Gateway}{July 2021 - Feb. 2022}
+      {Nagarro}{GraphQL, Netflix DGS library, CRUD, Agile}
+      \resumeItemListStart
+        \resumeItem{Request Processing}
+          {Accepted, processed \& routed Account \& Appointment bookings from different sources with query and mutation.}
+        \resumeItem{Tool Integration}
+          {Integrated with external tools like Salesforce, Exponea \& LeadSquared.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Nagarro - Digital Product Engineering Platform}{Remote}
+      {Associate Staff Engineer}{July 2021 - Present}
+      \resumeItemListStart
+        \resumeItem{Microservice Architecture Transition}
+          {Assisted in the transition from\opst{ Hybris} monolith to API-first microservice architecture, enhancing scalability and performance.}
+        \resumeItem{E-commerce and CRM Development}
+          {Designed and developed a revamped e-commerce platform and CRM gateway, improving user experience and system efficiency.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Verifone India Pvt. Ltd. - A Payment Gateway Company}{Bangalore}
+      {Software Development Engineer}{Feb. 2019 - June 2021}
+      \resumeItemListStart
+        \resumeItem{Code Development and Repository Management}
+          {Spearheaded code development, configuration, and administration of Bitbucket repositories and Jenkins jobs.}
+        \resumeItem{Performance Optimization}
+          {Achieved a \underline{90\% reduction in execution time} through custom benchmarking\opst{ of different JSON libraries and MapStruct vs ModelMapper} using Java Microbenchmarking Harness (JMH).}
+        \resumeItem{Project Deliveries}
+          {Delivered critical payment domain projects for both internal stakeholders and international clients, ensuring high standards of quality and timeliness.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {PG-DAC, ACTS}{Pune}
+      {Java Developer}{Aug. 2018 - Feb. 2019}
+      \resumeItemListStart
+        \resumeItem{Web Application Development}
+          {Implemented a web app for student-faculty interaction.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {AndroAddyct}{Remote}
+      {Android App Development Freelancer}{May 2016 - Dec. 2016}
+      \resumeItemListStart
+        \resumeItem{App Lifecycle Management}
+          {Managed Android app lifecycle with about \underline{900 active user devices} across \underline{175 countries/regions}.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeItem{Languages}
+      {Java, Shell (Bash), JavaScript/TypeScript, SQL}
+    \resumeItem{Frameworks/Libraries}
+      {Spring Boot, AOP, JUnit, Mockito, MapStruct, Jackson, Gson, NodeJS, ReactJS}
+    \resumeItem{Tools}
+      {Git, Maven, Kubernetes, ArgoCD, Grafana, Tempo, Prisma Cloud Compute, SonarQube}
+    \resumeItem{Platforms}
+      {REST, AWS, CDK, Helm, ChartMuseum, Istio Service Mesh}
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+% \section{Education}
+%   \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%    $\bullet$ Aced PG-DAC from CDAC-ACTS, Pune, MH (79.25\%) & $\bullet$ B.E. from MIET(RTMNU), Gondia, MH (78.80\%)\\
+% \end{tabular*}
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {PG-DAC (Post Graduate Diploma in Advanced Computing)}{79.25\%}
+      {CDAC ACTS}{Pune, MH}
+    \resumeSubheading
+      {B.E. (Bachelor of Engineering)}{78.80\%}
+      {MIET(RTMNU)}{Gondia, MH}
+  \resumeSubHeadingListEnd
+%-------------------------------------------
+\end{document}
