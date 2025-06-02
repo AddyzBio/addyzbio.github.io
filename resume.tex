@@ -19,6 +19,7 @@
 \usepackage{fontawesome5}
 \usepackage{multicol}
 \usepackage{soul}
+\usepackage{tikz}
 \setlength{\multicolsep}{-3.0pt}
 
 \pagestyle{fancy}
@@ -84,6 +85,27 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{%
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1)
+                --++ (-0, 1.2)
+                --++ (0.6, 0)
+                --++ (0, -0.6)
+                --++ (0.6, 0)
+                --++ (0, -1);
+            \path[draw,
+                line width = 0.5,
+                rounded corners=0.5]
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5)
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1)
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
 % control printing parts of text e.g. improvement reason to explain in interview etc.
 \newif\ifprintstuff
 \printstufffalse
@@ -101,7 +123,7 @@
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\Large Aditya Thakur} & \href{mailto:engg.aditya.thakur@gmail.com}{engg.aditya.thakur@gmail.com}\\
-  Software Engineer with over 6 YOE \& \href{https://github.com/orgs/contrib-src-openly/repositories}{Open Source GitHub Contributions} & \href{https://www.linkedin.com/in/-aditya-thakur-/}{LinkedIn} | +91-0123456789 \\
+  Software Engineer with over 6 YOE \& \href{https://github.com/orgs/contrib-src-openly/repositories}{\underline{Open Source GitHub Contributions {\ExternalLink}}} & \href{https://www.linkedin.com/in/-aditya-thakur-/}{\underline{LinkedIn {\ExternalLink}}} - +91-0123456789 \\
 \end{tabular*}
 
 %-----------PROJECTS-----------------
@@ -203,13 +225,13 @@
 \section{Skills}
   \resumeSubHeadingListStart
     \resumeItem{Languages}
-      {Java, Shell (Bash), JavaScript/TypeScript, Python, SQL}
+      {Java, Shell (Bash), JavaScript/TypeScript, SQL}
     \resumeItem{Frameworks/Libraries}
       {Spring Boot, AOP, Quarkus native, JUnit, Mockito, MapStruct, Jackson, Gson, NodeJS, ReactJS}
     \resumeItem{Tools/Platforms}
       {Git, Kubernetes, ArgoCD, Prisma Cloud Compute, SonarQube, REST, Istio Service Mesh, Terraform}
-    \resumeItem{Hobby projects}
-      {IoT, Home Automation, AI/ML with LLM, Ollama, Gradio, ComfyUI, n8n}
+    \opst{\resumeItem{Hobby projects}
+      {Python, IoT, Home Automation, AI/ML with LLM, Ollama, Gradio, ComfyUI, n8n}}
   \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
