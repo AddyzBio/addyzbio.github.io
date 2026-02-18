@@ -22,6 +22,7 @@
 \usepackage{tikz}
 \usepackage{tabto}
 \usepackage{multicol}
+\usepackage{lastpage}
 \setlength{\multicolsep}{-3.0pt}
 
 \pagestyle{fancy}
@@ -127,7 +128,7 @@
 %-----------FOOTER-----------------
 \lfoot{\scriptsize publish date: \today}
 \cfoot{\tabto{3cm} \scriptsize version: 3.0}
-\rfoot{\scriptsize page \thepage}
+\rfoot{\scriptsize page \thepage of \pageref{LastPage}}
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
@@ -172,74 +173,48 @@ Java Microservices Backend and DevOps Platform Engineer looking for opportunitie
   \resumeSubHeadingListEnd
 \end{multicols}
 
-%-----------PROJECTS-----------------
-\section{Projects}
+%-----------EXPERIENCE-----------------
+\section{Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Platform Engineering}{Mar. 2022 - Present}
-      {Nagarro}{Java 21, Gradle, Docker, Eventing, AWS, AI}
+      {Nagarro - Digital Product Engineering Platform}{Remote, Jul. 2021 - Present}
+      {Platform Engineering, CRM - Associate Staff Engineer}{Java 21, Gradle, Docker, Eventing, AWS, AI}
       \resumeItemListStart
         \resumeItem{Multi-tenant Microservices, Frameworks \& Build Plugins}
-          {Implemented observability, security, database \& Kafka starter libraries ensuring comprehensive system functionality \& increased development efficiency.
-          Notification service utilizing Kafka connectors.
+          {Production-grade observability, security, database \& Kafka starter libraries ensuring comprehensive system functionality \& increased development efficiency.
           Developed plugins for OpenAPI and AsyncAPI/AVRO specifications, facilitating code generation and scaffolding with Projen. Used by around \underline{100 microservices} for rapid API-first development.}
+        \resumeItem{Event-driven}
+          {Designed and established loosely coupled distributed systems using Spring Boot, Quarkus (Native), Apache Kafka, and Debezium (CDC) for real-time data streaming and high throughput processing.
+          Owned Enterprise-grade notification service utilizing Kafka connectors.}
         \resumeItem{Cross-cutting DevOps \& Security concerns}
           {Created, managed \& improved Docker base images with \underline{58\% size reduction} \& \underline{43\% reduction in security vulnerabilities}\opst{ using distroless and updated spring boot framework and java versions}. Used capabilities like multi-stage and multi-arch for increased efficiency.
           Strengthened security with GitHub Actions checks like SonarQube and established a robust tagging and versioning flow. Achieved \underline{80\% \& 33\% run time reduction} respectively in checkstyle\opst{ by skipping compilation, removing task dependencies} \& other checks\opst{ by checking git-diff, using setup-gradle action and github actions cache and gradle tasks management by declaring task dependencies and inputs/outputs}.}
         \resumeItem{Cost \& performance optimization with AI/MLOps}
           {Prepared AI agents and MCP Servers with Amazon Bedrock, Amazon SageMaker and Claude to migrate from Spring Boot 3 to Quarkus 3 (native) with perf test metrics showing \underline{over 150\% throughput improvement\opst{from (tuned SB) 120 RPS to (untuned Q) 300 RPS with 500m CPU and 512MiB Memory (Q needs 1/10 of SB) by K6}} or 50\% reduced resource consumption \& \underline{86\% reduced Docker image size\opst{ ~35MB v/s ~250MB}}.}
         \resumeItem{Cloud Automation \& SRE}
-          {Provisioned infrastructure with \textbf{AWS CDK} constructs in TypeScript to manage CloudFormation templates \& CI/CD pipelines in \textbf{Bash script}; Deployed services with \textbf{Helm Charts \& ChartMuseum}; System monitoring, alerting \& troubleshooting with tools like Splunk, Dynatrace, Grafana, Tempo \& Prometheus.}
+          {Provisioned infrastructure with \underline{AWS CDK} constructs in TypeScript to manage CloudFormation templates \& CI/CD pipelines in \underline{Bash script}; Deployed services with \underline{Helm Charts \& ChartMuseum}; System monitoring, alerting \& troubleshooting with tools like Splunk, Dynatrace, Grafana, Tempo \& Prometheus.}
+        \resumeItem{Migration}
+          {Assisted in the transition from\opst{ Hybris} monolith to microservice architecture enhancing scalability with 20\% reduction in time-to-market.}
+        \resumeItem{E-commerce and CRM Development}
+          {Designed and developed a revamped e-commerce platform and CRM gateway, improving user experience and system efficiency.}
+        \resumeItem{CRM Gateway Request Processing}
+          {Accepted, processed \& routed Account \& Appointment bookings from different sources with query and mutation. GraphQL, Netflix DGS library, CRUD, Agile}
+        \resumeItem{Tool Integration}
+          {Integrated with external tools like Salesforce, Exponea \& LeadSquared.}
         \opst{\resumeItem{Highlights}
           {Cross-functional, smart, modular, scalable \& well-documented.}}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Microservices Orchestrator}{Oct. 2019 - June 2021}
-      {Verifone India Pvt. Ltd.}{Java 11, Spring Boot 2, Tomcat, Maven}
+      {Verifone India Pvt. Ltd. - A Payment Gateway Company}{Bangalore, Mar. 2019 - June 2021}
+      {Microservices Orchestrator and Payment Processors - SDE}{Java 11, Spring Boot 2, Tomcat, Maven}
       \resumeItemListStart
         \resumeItem{Workflow Definition}
-          {Created a fully flexible structure to define microservices workflow using Spring Beans, Spring Async, and Spring Retry to handle exceptions and send custom responses.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Terminal/POS Payment \& FOREX Rate Processors}{Mar. 2019 - Sept. 2019, Jan. 2021 - June 2021}
-      {Verifone India Pvt. Ltd.}{Java 8, OOP principles, SOLID design}
-      \resumeItemListStart
+          {Created a fully flexible structure to define microservices workflow customized for multiple markets using Spring Beans, Spring Async, and Spring Retry to handle exceptions and send custom responses.}
         \resumeItem{JSON \& HEX}
-          {Translated JSON from payment devices into Acquirer-specific HEX requests \& response back to JSON.}
+          {Translated JSON from Terminal/POS payment devices into Acquirer-specific HEX requests \& response back to JSON. Java 8, OOP principles, SOLID design}
         \resumeItem{FOREX Integration}
-          {Communicated with FOREX provider over HTTP using REST \& JSON.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Customer Resource Management(CRM) Gateway}{July 2021 - Feb. 2022}
-      {Nagarro}{GraphQL, Netflix DGS library, CRUD, Agile}
-      \resumeItemListStart
-        \resumeItem{Request Processing}
-          {Accepted, processed \& routed Account \& Appointment bookings from different sources with query and mutation.}
-        \resumeItem{Tool Integration}
-          {Integrated with external tools like Salesforce, Exponea \& LeadSquared.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
-%-----------EXPERIENCE-----------------
-\section{Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Nagarro - Digital Product Engineering Platform}{Remote}
-      {Associate Staff Engineer}{July 2021 - Present}
-      \resumeItemListStart
-        \resumeItem{Migration}
-          {Assisted in the transition from\opst{ Hybris} monolith to microservice architecture enhancing scalability.}
-        \resumeItem{E-commerce and CRM Development}
-          {Designed and developed a revamped e-commerce platform and CRM gateway, improving user experience and system efficiency.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Verifone India Pvt. Ltd. - A Payment Gateway Company}{Bangalore}
-      {Software Development Engineer}{Feb. 2019 - June 2021}
-      \resumeItemListStart
+          {Communicated with FOREX Rate processing provider over HTTP using REST \& JSON.}
         \resumeItem{Code Development and Repository Management}
           {Spearheaded code development, configuration, and administration of Bitbucket repositories and Jenkins jobs.}
         \resumeItem{Performance Optimization}
@@ -248,12 +223,17 @@ Java Microservices Backend and DevOps Platform Engineer looking for opportunitie
           {Delivered critical payment domain projects for both internal stakeholders and international clients, ensuring high standards of quality and timeliness.}
       \resumeItemListEnd
 
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
     \resumeSubheading
       {PG-DAC, ACTS}{Pune}
       {Java Developer}{Aug. 2018 - Feb. 2019}
       \resumeItemListStart
         \resumeItem{Web Application Development}
-          {Implemented a web app for student-faculty interaction.}
+          {Implemented a web app for student-faculty interaction within a month.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -264,6 +244,41 @@ Java Microservices Backend and DevOps Platform Engineer looking for opportunitie
           {Managed app lifecycle with about \underline{900 active user devices} across \underline{175 countries/regions}.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
+
+%-----------ACCOLADES-----------------
+\section{Accolades, Recognition \& Certifications}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Nagarro}{}
+      {Review \& Feedback}{}
+      \resumeItemListStart
+        \resumeItem{2025}
+          {Engineering Excellence Award}
+        \resumeItem{Consistent}
+          {Extraordinary Role Model, Highly Valuable feedback}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Udemy}{}
+      {Certifications}{}
+      \resumeItemListStart
+        \resumeItem{AI/ML}
+          {Completed Training on LLM Engineering, Generative AI, Agentic AI Engineer and AI Engineer Production Track}
+        \resumeItem{DevOps}
+          {Kubernetes, Docker, Git}
+        \resumeItem{JavaScript}
+          {NodeJS, ReactJS}
+      \resumeItemListEnd
+    \resumeSubheading
+      {KodeKloud}{}
+      {Certifications}{}
+      \resumeItemListStart
+        \resumeItem{AWS}
+          {Basics, ECS}
+        \resumeItem{DevOps}
+          {Kubernetes}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
 
 %-----------EDUCATION-----------------
 \section{Education}
